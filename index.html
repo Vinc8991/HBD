@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f3e5f5;
+            text-align: center;
+            padding: 50px;
+            perspective: 1000px; /* Enables 3D effect */
+        }
+        .card-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .card {
+            background: linear-gradient(145deg, #ffe4e1, #ffe4b5);
+            border: 2px solid #f8bbd0;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            position: relative;
+            transform-style: preserve-3d;
+            transform-origin: left; /* Makes it open like a book */
+            animation: openBook 2s ease forwards;
+            transform: rotateY(90deg); /* Start in closed position */
+        }
+        .card::before, .card::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 223, 186, 0.7);
+            width: 200px;
+            height: 200px;
+            z-index: -1;
+            animation: glow 10s ease-in-out infinite;
+        }
+        .card::before {
+            top: -100px;
+            left: -100px;
+        }
+        .card::after {
+            bottom: -100px;
+            right: -100px;
+        }
+        @keyframes glow {
+            0% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+            100% { opacity: 0.5; transform: scale(1); }
+        }
+        @keyframes openBook {
+            0% { transform: rotateY(90deg); }
+            100% { transform: rotateY(0deg); }
+        }
+        h1 {
+            color: #ff1493;
+            text-shadow: 2px 2px 8px rgba(255, 20, 147, 0.7);
+            font-size: 3em;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards;
+            animation-delay: 1s;
+        }
+        p {
+            font-size: 20px;
+            color: #555;
+            font-weight: bold;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            animation: fadeIn 2s ease forwards;
+            animation-delay: 1.5s;
+        }
+        .magic-stars {
+            margin: 20px 0;
+            font-size: 40px;
+            color: #f9a825;
+            text-shadow: 0 0 10px #fbc02d, 0 0 20px #f57f17;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards;
+            animation-delay: 2s;
+        }
+        .signature {
+            margin-top: 40px;
+            font-style: italic;
+            color: #666;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards;
+            animation-delay: 2.5s;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">
+            <h1>✨ Happy 19th Birthday! ✨</h1>
+            <p>May your day be filled with magic, wonder, and endless joy. The stars are shining just for you today!</p>
+            <div class="magic-stars">⭐️ ✨ 🌟</div>
+            <p class="signature">With lots of love and magic, Vinc</p>
+        </div>
+    </div>
+</body>
+</html>
